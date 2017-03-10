@@ -20,7 +20,8 @@ public class testingCourse {
 		Professor prof = new Professor("I", "Stink");
 		test.setProfessor(prof);
 		String testString = test.toString();
-		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Prof: I Stink"))) {
+		System.out.println(testString);
+		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Professor: I Stink"))) {
 			fail("Construtor or getters did not work");
 		}
 	}
