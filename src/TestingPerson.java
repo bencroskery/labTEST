@@ -47,7 +47,7 @@ public class TestingPerson {
 	public void testGetFullName(){
 		Person test5 = new Person("Cam", "Birdi");
 		String result4 = test5.getFullName();
-		if(!(result4.equals(test5.toString()))){
+		if(!(result4.equals(("Cam" + " " + "Birdi")))){
 			fail("toString fails horribly");
 		};
 	}
@@ -113,7 +113,7 @@ public class TestingPerson {
 		Course course2 = new Course("3010", "SYSC");
 		test10.remove(course2);
 		Course[] array2 = test10.getCourses();
-		if((array2[0] == course2))
+		if((array2.length != 0))
 		{
 			fail("Remove for the course didn't work");
 		}
