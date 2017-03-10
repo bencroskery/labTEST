@@ -18,7 +18,7 @@ public class testingCourse {
 		Professor prof = new Professor("I", "Stink");
 		test.setProfessor(prof);
 		String testString = test.toString();
-		if (!(testString.equals("Course: Sysc 3010, Name: Bill isShit, Prof: I Stink"))) {
+		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Prof: I Stink"))) {
 			fail("Construtor or getters did not work");
 		}
 	}
@@ -26,11 +26,33 @@ public class testingCourse {
 	@Test
 	public void testToString2() {
 		Course test = new Course("Sysc 3010", "Bill is Shit");
+		String testString = test.toString();
+		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit"))) {
+			fail("Construtor or getters did not work");
+		}
+	}
+	
+	@Test
+	public void testEquals1() {
+		Course test = new Course("Sysc 3010", "Bill is Shit");
+		Course test1 = new Course("Sysc 3010", "Bill is Shit");
 		Professor prof = new Professor("I", "Stink");
 		test.setProfessor(prof);
-		String testString = test.toString();
-		if (!(testString.equals("Course: Sysc 3010, Name: Bill isShit, Prof: I Stink"))) {
-			fail("Construtor or getters did not work");
+		test1.setProfessor(prof);
+		if (!(test.equals(test1))) {
+			fail("Equals Fails");
+		}
+	}
+	
+	@Test
+	public void testEquals2() {
+		Course test = new Course("Sysc 3010", "Bill is Shit");
+		Course test1 = new Course("Sysc 3010", "Bill is Not Shit");
+		Professor prof = new Professor("I", "Stink");
+		test.setProfessor(prof);
+		test1.setProfessor(prof);
+		if ((test.equals(test1))) {
+			fail("Equals Fails");
 		}
 	}
 }
