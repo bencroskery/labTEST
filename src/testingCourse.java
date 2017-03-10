@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class testingCourse {
@@ -53,6 +55,33 @@ public class testingCourse {
 		test1.setProfessor(prof);
 		if ((test.equals(test1))) {
 			fail("Equals Fails");
+		}
+	}
+	
+	@Test
+	public void testaddStudent() {
+		Course test = new Course("Sysc 3010", "Bill is Shit");
+		Professor prof = new Professor("I", "Stink");
+		test.setProfessor(prof);
+		Student stud = new Student("Bill", "Shit");
+		test.addStudent(stud);
+		ArrayList<Student> studs = test.getStudents();
+		if (!(studs.contains(stud))) {
+			fail("Add student Fail");
+		}
+	}
+	
+	@Test
+	public void testremoveStudent() {
+		Course test = new Course("Sysc 3010", "Bill is Shit");
+		Professor prof = new Professor("I", "Stink");
+		test.setProfessor(prof);
+		Student stud = new Student("Bill", "Shit");
+		test.addStudent(stud);
+		test.removeStudent(stud);
+		ArrayList<Student> studs = test.getStudents();
+		if ((studs.contains(stud))) {
+			fail("Remove student Fail");
 		}
 	}
 }
