@@ -20,7 +20,7 @@ public class Professor extends Person {
 		if (super.equals(o) && o instanceof Professor) {
 			Professor professor = (Professor)o;
 			
-			if (office.equals(professor.office)) {
+			if (office == null ? office == professor.office : office.equals(professor.office)) {
 				return true;
 			}
 		}

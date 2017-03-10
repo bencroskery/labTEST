@@ -55,7 +55,9 @@ public class Person {
 		if (o instanceof Person) {
 			Person person = (Person)o;
 			
-			if (name.equals(person.name) && address.equals(person.address) && courses.equals(person.courses)) {
+			if (name.equals(person.name) &&
+				address == null ? address == person.address : address.equals(person.address) &&
+				courses.equals(person.courses)) {
 				return true;
 			}
 		}
