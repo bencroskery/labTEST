@@ -106,7 +106,6 @@ public class TestingPerson {
 		
 			
 		}
-	}
 	
 	@Test
 	public void testRemove(){
