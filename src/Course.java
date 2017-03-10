@@ -14,10 +14,16 @@ public class Course
     	this.students = null;
     };
     
-    public String getId() { return id; }
+    public String getId() { return id; } 
     public String getName( ) { return name; }
 
-    public String toString() { return null; }
+    public String toString() { 
+    	if (this.professor == null){
+    	String a = "Course: " + this.id + ", Name: " + this.name;
+    	return a; }
+    	String a  = "Course: " + this.id + ", Name: " + this.name + ", Professor: " + this.professor.getFullName();
+    	return a;
+    }
     public boolean equals(Object o) { 
     	Course c = (Course) o;
     	if (!this.id.equals(c.id))
