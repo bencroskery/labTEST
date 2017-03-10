@@ -21,7 +21,7 @@ public class testingCourse {
 		test.setProfessor(prof);
 		String testString = test.toString();
 		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Prof: I Stink"))) {
-			fail("Construtor or getters did not work");
+			fail("got:" + testString);
 		}
 	}
 	
