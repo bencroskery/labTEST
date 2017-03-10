@@ -26,8 +26,30 @@ public class testingProfessor {
 	public void testSetOffice2() {
 		Professor prof = new Professor("I","Stink");
 		prof.setOffice("Court");
-		if (!(prof.getOffice().equals("hahhahahahah"))) {
+		if ((prof.getOffice().equals("hahhahahahah"))) {
 			fail("Failed setting office got: " + prof.getOffice());
+		}
+	}
+	
+	@Test
+	public void testEquals1() {
+		Professor prof = new Professor("I","Stink");
+		Professor prof1 = new Professor("I","Stink");
+		prof.setOffice("Court");
+		prof1.setOffice("Court");
+		if (!(prof.equals(prof1))) {
+			fail("Failed Equals, Got: " + prof.equals(prof1));
+		}
+	}
+	
+	@Test
+	public void testEquals2() {
+		Professor prof = new Professor("I","Stink");
+		Professor prof1 = new Professor("I","Not");
+		prof.setOffice("Court");
+		prof1.setOffice("Thing");
+		if (prof.equals(prof1)) {
+			fail("Failed Equals, Got: " + prof.equals(prof1));
 		}
 	}
 

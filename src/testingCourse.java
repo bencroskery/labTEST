@@ -20,7 +20,7 @@ public class testingCourse {
 		Professor prof = new Professor("I", "Stink");
 		test.setProfessor(prof);
 		String testString = test.toString();
-		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Prof: I Stink"))) {
+		if (!(testString.equals("Course: Sysc 3010, Name: Bill is Shit, Professor: I Stink"))) {
 			fail("got:" + testString);
 			System.out.println(testString);
 		}
