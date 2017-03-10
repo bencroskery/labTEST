@@ -8,8 +8,9 @@ public class testingAddress {
 
 	@Test
 	public void testAddress1() {
+		Address testAddress = null;
 		try {
-			Address testAddress = new Address("thisSucks", "Ottawa","k1g5u6");
+			testAddress = new Address("thisSucks", "Ottawa","k1g5u6");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -17,15 +18,16 @@ public class testingAddress {
 		}
 		String expection = "Unit: 0, Street: thisSucks, City: Ottawa, Postal Code: k1g5u6";
 		
-		if (!(testAddress.toString.equals(expection)) ){
+		if (!(testAddress.toString().equals(expection)) ){
 			fail("Address was not created with the first Construtor");
 		}
 	}
 	
 	@Test
 	public void testAddress2() {
+		Address testAddress=null;
 		try {
-			Address testAddress = new Address(10, "thisSucks", "Ottawa","k1g5u6");
+			testAddress = new Address(10, "thisSucks", "Ottawa","k1g5u6");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,7 +35,7 @@ public class testingAddress {
 		}
 		String expection = "Unit: 10, Street: thisSucks, City: Ottawa, Postal Code: k1g5u6";
 		
-		if (!(testAddress.toString.equals(expection)) ){
+		if (!(testAddress.toString().equals(expection)) ){
 			fail("Address was not created with the second Construtor");
 		}
 	}
@@ -50,9 +52,11 @@ public class testingAddress {
 	}
 	
 	public void testEquals1() {
+		Address testAddress = null;
+		Address testAddress1 = null;
 		try {
-			Address testAddress = new Address(10, "thisSucks", "Ottawa","k1g5u6");
-			Address testAddress1 = new Address(10, "thisSucks", "Ottawa","k1g5u6");
+			testAddress = new Address(10, "thisSucks", "Ottawa","k1g5u6");
+			testAddress1 = new Address(10, "thisSucks", "Ottawa","k1g5u6");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -64,9 +68,11 @@ public class testingAddress {
 	}
 	
 	public void testEquals2() {
+		Address testAddress = null;
+		Address testAddress1 = null;
 		try {
-			Address testAddress = new Address(10, "thisisPoop", "Ottawa","k1g5u6");
-			Address testAddress1 = new Address(10, "thisSucks", "Ottawa","k1g5u6");
+			testAddress = new Address(10, "thisisPoop", "Ottawa","k1g5u6");
+			testAddress1 = new Address(10, "thisSucks", "Ottawa","k1g5u6");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
