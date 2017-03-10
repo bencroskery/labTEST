@@ -1,12 +1,31 @@
 
-public class Professor extends Person
-{
-   private String office;
+public class Professor extends Person {
+	private String office;
 
-   public Professor(String firstName, String lastName) { };
-   public void setOffice(String office) { }
-   public String getOffice() { return null;}
+	public Professor(String first, String last) {
+		super(first, last);
+		office = null;
+	}
 
-   // You decide if you need toString() and equals()
+	public void setOffice(String office) {
+		this.office = office;
+	}
+
+	public String getOffice() {
+		return office;
+	}
+
+
+	public boolean equals(Object o) {
+		if (super.equals(o) && o instanceof Professor) {
+			Professor professor = (Professor)o;
+			
+			if (office.equals(professor.office)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	// You decide if you need toString()
 }
-

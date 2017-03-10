@@ -1,11 +1,26 @@
-public class Student extends Person
-{
-   private static int nextFreeNumber = 0;
-   private int number;
-   public Student(String first, String last) {};
+public class Student extends Person {
+	private static int nextFreeNumber = 0;
+	private int number;
 
-   public int getNumber() { return -1; }
+	public Student(String first, String last) {
+		super(first, last);
+		number = nextFreeNumber;
+	}
 
-   // You decide if you need toString() and equals()
+	public int getNumber() {
+		return number;
+	}
+
+	public boolean equals(Object o) {
+		if (super.equals(o) && o instanceof Student) {
+			Student student = (Student)o;
+			
+			if (number == student.number) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	// You decide if you need toString()
 }
-
