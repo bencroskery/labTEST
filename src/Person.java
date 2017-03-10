@@ -1,3 +1,5 @@
+import static org.junit.Assert.fail;
+
 import java.util.ArrayList;
 
 public class Person {
@@ -68,7 +70,9 @@ public class Person {
 			Person person = (Person)o;
 			
 			if (name.equals(person.name) &&
-				address == null ? address == person.address : address.equals(person.address) &&
+				(address == null ? 
+						address == person.address 
+						: address.equals(person.address)) &&
 				courses.equals(person.courses)) {
 				return true;
 			}
