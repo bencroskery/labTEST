@@ -7,8 +7,7 @@ public class testingProfessor {
 	@Test
 	public void testProfessor() {
 		Professor prof = new Professor("I","Stink");
-		String profString = prof.toString();
-		if (!(profString.toString().equals("First Name: I, Last Name: Stink"))) {
+		if (!(prof.getFullName().equals("I Stink"))) {
 			fail("Professor contructor has failed or to string");
 		}
 	}
