@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Array;
+
 import org.junit.Test;
 
 public class TestingPerson {
@@ -96,6 +98,11 @@ public class TestingPerson {
 		Person test9 = new Person("Donny", "Boy");
 		Course course1 = new Course("3020", "SYSC");
 		test9.addCourse(course1);
+		Course[] array1 = test9.getCourses();
+		if((array1[0] != course1))
+		{
+			fail("Adder for the course didn't work");
+		}
 		
 			
 		}
@@ -103,7 +110,27 @@ public class TestingPerson {
 	
 	@Test
 	public void testRemove(){
-		
+		Person test10 = new Person("Dave", "Son");
+		Course course2 = new Course("3010", "SYSC");
+		test10.remove(course2);
+		Course[] array2 = test10.getCourses();
+		if((array2[0] == course2))
+		{
+			fail("Remove for the course didn't work");
+		}
+			
 	}
 	
+	@Test
+	public void testGetCourses(){
+		Person test11 = new Person("Dave", "Tom");
+		Course course3 = new Course("3303", "SYSC");
+		Course[] array3 = test11.getCourses();
+		if((array3[0] != course3))
+		{
+			fail("Get for the course didn't work");
+		}
+		
+	}
 }
+	
