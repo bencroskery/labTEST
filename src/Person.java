@@ -38,7 +38,7 @@ public class Person {
 	}
 
 	public Course[] getCourses() {
-		return (Course[]) courses.toArray();
+		return courses.toArray(new Course[courses.size()]);
 	}
 
 	public void addCourse(Course course) {
