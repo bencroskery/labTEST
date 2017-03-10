@@ -42,8 +42,8 @@ public class Course
     };
     public Professor getProfessor() { return this.professor; }
 
-    public void addStudent( Student student ) {students.add(student);};
-    public void removeStudent( Student student ) {students.remove(student);};
+    public void addStudent( Student student ) {this.students.add(student);};
+    public void removeStudent( Student student ) {this.students.remove(student);};
     public ArrayList<Student> getStudents() { return this.students; }
     
     
