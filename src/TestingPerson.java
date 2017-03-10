@@ -4,8 +4,6 @@ import org.junit.Test;
 
 public class TestingPerson {
 
-	@Test
-	
 	
 	@Test
 	public void testToString(){
@@ -94,6 +92,18 @@ public class TestingPerson {
 	}
 	
 	@Test
-	public void testGetCourses()
+	public void testAddCourse(){
+		Person test9 = new Person("Donny", "Boy");
+		Course course1 = new Course("3020", "SYSC");
+		test9.addCourse(course1);
+		
+			
+		}
+	}
+	
+	@Test
+	public void testRemove(){
+		
+	}
 	
 }
