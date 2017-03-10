@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Person {
 	private Name name;
@@ -48,7 +49,19 @@ public class Person {
 	}
 
 	public String toString() {
-		return "Hello I am Billy";
+		String s = name.toString();
+		if (address != null) {
+			s += " lives at " + address.toString() + " and";
+		}
+		if (!courses.isEmpty()) {
+			s += " takes:";
+			for (Course c : courses) {
+				s += "\n\t" + c.toString();
+			}
+		} else {
+			s += " takes no courses";
+		}
+		return s;
 	}
 
 	public boolean equals(Object o) {
