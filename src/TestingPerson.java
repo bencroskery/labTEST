@@ -11,7 +11,7 @@ public class TestingPerson {
 	public void testToString(){
 		Person test = new Person ("Billy", "Bob");
 		String result = test.toString();
-		if(!(result.equals("First Name: Billy, Last Name: Bob"))){
+		if(!(result.equals("Billy Bob takes no courses"))){
 			fail("Getters or Constructor didn't work");
 		}
 	}
@@ -20,7 +20,7 @@ public class TestingPerson {
 	public void testEquals(){
 		Person test1 = new Person ("Billy", "Bob");
 		Person test2 = new Person ("Adam", "Berger");
-		if(!(test1.equals(test2))){
+		if((test1.equals(test2))){
 			fail("Equals didn't work");
 		}	
 	}
@@ -124,8 +124,9 @@ public class TestingPerson {
 	public void testGetCourses(){
 		Person test11 = new Person("Dave", "Tom");
 		Course course3 = new Course("3303", "SYSC");
+		test11.addCourse(course3);
 		Course[] array3 = test11.getCourses();
-		if((array3[0] != course3))
+		if((array3.length != 1))
 		{
 			fail("Get for the course didn't work");
 		}
