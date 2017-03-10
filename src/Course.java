@@ -11,7 +11,7 @@ public class Course
     	this.id = id;
     	this.name = name;
     	this.professor = null;
-    	this.students = null;
+    	this.students = new ArrayList <> ();
     };
     
     public String getId() { return id; } 
@@ -30,7 +30,7 @@ public class Course
     		return false;
     	else if (!this.name.equals(c.name))
     		return false;
-    	else if (!this.professor.equals(c.professor))
+    	else if (this.professor == null ? this.professor == c.professor : !this.professor.equals(c.professor))
     		return false;
     	else if (!this.students.equals(c.students))
     		return false;
